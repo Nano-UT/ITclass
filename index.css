@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #98fb98;
+}
+
+.header_area {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header_block {
+  background: #AAAAAA;
+}
+
+.header_box {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.header_box h1 {
+  margin: 0;
+  padding: 20px 0;
+  color:000000;
+  font-size: 34px;
+  text-align: center;
+}
+
+/* コンテンツ */
+.contents_area {
+  width: 700px;
+  overflow: auto; /* スクロールする範囲を制御 */
+  margin: 20 0;
+  padding: 200px 0 150px; /* コンテンツ上下にスペース */
+}
+
+.content_block {
+  padding: 300px 10px;
+  border: 1px solid #CCC;
+}
+
+/* フッター */
+.footer_area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer_block {
+  background: #FDDC80;
+}
+
+.footer_box {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.footer_box p {
+  margin: 0;
+  padding: 20px 0;
+  font-size: 34px;
+  text-align: center;
+}

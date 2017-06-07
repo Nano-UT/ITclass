@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang=“ja”>
+
+  <HEAD>
+
+    <link rel="STYLESHEET" href="index.css" type="text/css">
+
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+      <TITLE> Document Title </TITLE>
+
+  </HEAD>
+
+
+  <BODY>
+
+<script type="text/javascript" src="/home/3599586718/public_html/check1.js"></script>
+
+  <div class="header_area">
+    <div class="header_block">
+        <div class="header_box">
+            <h1>
+                スタイルシートでヘッダーを固定しています
+            </h1>
+        </div>
+    </div>
+  </div>
+
+    <H1> 見出しの大きさは見出しタグの重要度で決めてはいけないそうです </H1>
+
+
+
+    <A HREF="#ANCHOR">ジャンプ先のアンカーはほげほげしています</A>
+
+    <P>
+      <UL>
+        <LI> 列挙の仕方(その一)
+        <LI> 点で列挙
+      </UL>
+
+      <OL>
+        <LI> 列挙の仕方(その二)
+        <LI> 数え上げと文字の色(<SPAN STYLE="color: #00FFFF">水色</SPAN>)
+        <!-- コメントはブラウザに表示されない -->
+      </OL>
+    </P>
+
+    <P>
+      <DIV >
+        <CENTER>
+          <IMG SRC="putoff.jpg" width="600"> <BR>かちました。
+          <!-- リンクのSRCにはHTMLファイルがあるフォルダからの相対パスを記述する.HTML文書と画像ファイルが同一ディレクトリ内にある場合には,その画像ファイルの名前のみを記述する.  -->
+        </CENTER>
+      </DIV>
+
+    </P>
+
+    <P>
+     <A HREF="http://www.u-tokyo.ac.jp/"> リンク </A>を踏むとブラクラ…ではなく東京大学のWWWページにアクセスします
+    </P>
+
+<PRE id="ANCHOR">
+
+<h2>課題3</h2>
+(1)<ul>
+<li>10進数の15は2進数では<span id="q3_1">1111</span>となる。
+<li>10進数の33は2進数では<span id="q3_2">100001</span>となる。
+<li>2進数では1100 + 0101 = <span id="q3_3">10001</span>となる。
+<li>2進数では1111 + 1000 = <span id="q3_4">10111</span>となる。
+<li>2進数の0110111100000101は16進数では<span id="q3_5">6F05</span>となる。
+<li>2進数の0010111111100100は16進数では<span id="q3_6">2FE4</span>となる。
+<li>16進数のCAFEは10進数では<span id="q3_7">51966</span>となる。
+</ul>
+
+(2)
+問題:<ul>
+<li>10進数の31は2進数では...となる。
+<li>10進数の16は2進数では...となる。
+<li>2進数では1001 + 0111 = ...となる。
+<li>8進数では163 + 767 = ...となる。
+<li>2進数の1101010001001011は8進数では...となる。
+<li>8進数の4506は16進数では...となる。
+<li>16進数のFEBは2進数では...となる。
+</ul>
+
+画像のデータ量:
+  画像の解像度は4160*3120であり、1ピクセルの表現にRGBそれぞれで1バイトが費やされている。
+  したがって、圧縮が一切ない場合のデータ量は
+  4160*3120*3 = 38937600 (バイト) ≒ 37 MB
+
+(3)
+「<span id="q3_8_name">長吉博成</span>」
+UTF-8       : <span id="q3_8_utf8">e9 95 b7 e5 90 89 e5 8d 9a e6 88 90</span>
+Shift_JIS   : <span id="q3_8_sjis">92 b7 8b 67 94 8e 90 ac</span>
+EUC-JP      : <span id="q3_8_euc">c4 b9 b5 c8 c7 ee c0 ae</span>
+ISO-2022-JP : <span id="q3_8_jis">1b 24 42 44 39 35 48 47 6e 40 2e</span> (1b 24 42 はASCIIから日本語への変換を表している)
+
+<h2>課題4</h2>
+ED21を使った練習問題:
+練習問題1.
+
+  0  load 10
+  1  sub 12
+  2  jz 4
+  3  j 0
+  4  load 11
+  5  sub 13
+  6  jz 8
+  7  j 4
+  8  stop 0
+
+練習問題2.
+
+  0  load 15
+  1  sub 16
+  2  jz 12
+  3  jm 5
+  4  j 1
+  5  add 16
+  6  store 14
+  7  load 16
+  8  store 15
+  9  load 14
+  10 store 16
+  11 j 0
+  12 load 16
+  13 stop 0
+  14 0
+
+練習問題3.
+
+  プログラム1は、11番地と12番地の値が与えられた時、
+  13番地に(11番地の値)^(12番地の値)を書き込むプログラムである。
+
+練習問題4.
+
+　プログラム2は、10番地と11番地の値が与えられた時、
+  12番地に(10番地の値)の(11番地の値)重階乗を書き込むプログラムである。
+  (ただし、10番地の値が11番地の値の倍数でない時、プログラムは停止しない。)
+
+練習問題5.
+
+  プログラム3は、14番地の値が与えられた際、
+  プログラムが実行を続けている間、一定の間隔(この間隔は14番地の値に依存する)で
+  15番地に0と1を交互に表示するプログラムである。
+
+練習問題6.
+
+  0  load 10
+  1  sub 11
+  2  jz 5
+  3  jm 6
+  4  j 1
+  5  stop 0
+  6  load 9
+  7  out 9
+  8  stop 0
+  9  65
+
+  これは、10番地と11番地の値が与えられた時、
+  10番地の値が11番地の値の倍数なら停止し、そうでなければ"A"を出力するプログラムである。
+
+練習問題7.
+
+  プログラム4は、20~29番地の値が与えられた際、
+  30~39番地にそれらのデータを順に格納するプログラムである。
+
+練習問題8.
+
+  プログラム5は、プログラムそれ自体を、少しずつ変化させながら後ろのメモリに書き込んでいくプログラムである。
+
+<h2>課題5</h2><ul>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#fidqrm">210夜の日時を表示</a>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#ysc2sa">インド式掛け算表を表示</a>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#bkyyur">つるかめ算を解く</a>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#mt9vc4">複利計算を実行</a>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#y6eg63">入力した値の約数を表示</a>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#uorfyu">入力した値までの素数を表示</a>
+<li><a href="https://blockly-demo.appspot.com/static/demos/code/index.html#x3dije">じゃんけんプログラム</a>
+</ul>
+
+<h2>課題6</h2><ul>
+<li><a href="/home/4290679333/public_html/index.html">村田君のページ</a>
+<li><a href="/home/9226630972/public_html/index.html">山添君のページ</a>
+<li><a href="/home/3054772702/public_html/index.html">山口さんのページ</a></ul>
+
+ここから先はチェック欄です
+<script type="text/javascript" src="check1.js"></script>
+
+<h2>課題7</h2><ul>
+<li><a href="http://user.ecc.u-tokyo.ac.jp/users/user-16453/index.html">村田君のページ</a>
+<li><a href="http://user.ecc.u-tokyo.ac.jp/users/user-16480/index.html">山添君のページ</a>
+<li><a href="http://user.ecc.u-tokyo.ac.jp/users/user-16453/index.html">山口さんのページ</a>
+
+<li><a href="http://user.ecc.u-tokyo.ac.jp/users/user-16515/index.html">自分のページ</a></ul>
+
+</pre>
+
+</BODY>
+</HTML>
