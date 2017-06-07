@@ -1,6 +1,6 @@
 var x;
 var i;
-function reset(){
+function reset(m){
     max = m;
     i = Math.floor(max/2);
 }
