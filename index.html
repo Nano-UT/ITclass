@@ -320,20 +320,211 @@ ED21を使った練習問題:
 
 <h2>課題11</h2>
 <h3>練習1</h3>
-この暗号において、文字列は一定の間隔で区切られている。これは単語ごとに釘r垂れていると推測できる。
-また、使われている文字はアルファベットであり、1文字のみの単語も多い。
-加えて、文章中に「gur」のいう単語がよく見られる。
-以上から、暗号文は英語を単換字式暗号もしくはヴィジュネル暗号で暗号化したものと予想できる。
-また、「gur」とは「the」を表せているという推測ができる。
-<h3>練習2</h3>
-<h3>練習3</h3>
+この暗号において、文字列は一定の間隔で区切られている。これは単語ごとの区切りであると推測できる。
+また、使われている文字はアルファベットであり、1文字のみの単語(n)もある。
+以上から、暗号文は西洋系の言語を単純な暗号によって暗号化したものと推測される。
+また、暗号文中に「gur」「Jr」という単語が非常によく見られる。
+以上から、この暗号は単換字式暗号あるいはヴィジュネル暗号ではないかと考えられる。
+暗号文中の文字の出現頻度に一定の偏りがあることを踏まえ、暗号を単換字式暗号と仮定する。
+このとき、「gur」を「the」であると仮定すれば、この暗号がシーザー暗号であることに気づくだろう。
+この場合は最も有名なシーザー暗号、すなわちROT13であった。サイトからROT13を選択し復号。
+
+平文は以下の通り。憲法の前文より引用されている。
+
+ We, the Japanese people, acting through our duly elected representatives in the National Diet, determined that we shall secure for ourselves and our posterity the fruits of peaceful cooperation with all nations and the blessings of liberty throughout this land, and resolved that never again shall we be visited with the horrors of war through the action of government, do proclaim that sovereign power resides with the people and do firmly establish this Constitution. Government is a sacred trust of the people, the authority for which is derived from the people, the powers of which are exercised by the representatives of the people, and the benefits of which are enjoyed by the people. This is a universal principle of mankind upon which this Constitution is founded. We reject and revoke all constitutions, laws, ordinances, and rescripts in conflict herewith.
+
+<h3>練習2</h3><ul>
+1.空白をxでパディングし、サイトでROT72より暗号化すると以下の通り。
+<li>平文：AlicexandxBobxpublishesxtheirxkeysxbyxusingxPrettyxGoodxPrivacy.
+<li>暗号文：HspjlehukeIviewbispzolzeaolpyerlfzeifebzpuneWylaafeNvvkeWypchjf.
+2.暗号文中のxがsもしくはtを表していることを踏まえると、サイトでROT21により復号できる。
+<li>暗号文：Ymfy'x fx jfxd fx unj! Bfny f xjhtsi, ymfy'x ymj bwtsl umwfxj, gzy ny'x rjfsnsl nx nijsynhfq yt f unjhj tk hfpj; gtym jcuwjxxntsx htsajd ymj nijf tk xnruqnhnyd. Ymj vzjxynts nx: Bmd? Bmfy rfpjx hfpj "jfxd," fsdbfdx? Bjqq, N itzgy ny'x wjkjwwnsl yt ymj httpnsl uwthjxx nsatqaji bnym gfpnsl f hfpj, gjhfzxj ymfy wjvznwjx f kfnw gny tk btwp. Dtz mfaj yt hwfhp jllx, rnc xyzkk zu ns f gtbq, xjy ymj yjrujwfyzwj tk ymj tajs, fsi xt ts. Fqwnlmy, ny'x sty ymfy htruqnhfyji, gzy ny xynqq wjvznwjx jkktwy, xt rzhm xt ymfy xtrj ujtuqj its'y jajs hfwj yt gtymjw bnym ny.It dtz pstb bmfy nx jfxd ymtzlm? Jfynsl f gfpji hfpj! Djfm, ymfy'x f uwjyyd jfxd ymnsl yt it gjhfzxj ny yfxyjx ltti. Ymzx, ymnx umwfxj rfd utxxngqd ljy nyx "jfxd yt fhhtruqnxm" rjfsnsl kwtr mtb xnruqj ny hfs gj yt jfy f unjhj tk ymnx ijqnhntzx ijxjwy. Mtbjajw, ymfy nx xnruqd f lzjxx; ymj twnlnsx ktw ymnx umwfxj fwj sty hjwyfns.
+<li>平文：That's as easy as pie! Wait a second, that's the wrong phrase, but it's meaning is identical to a piece of cake; both expressions convey the idea of simplicity. The question is: Why? What makes cake "easy," anyways? Well, I doubt it's referring to the cooking process involved with baking a cake, because that requires a fair bit of work. You have to crack eggs, mix stuff up in a bowl, set the temperature of the oven, and so on. Alright, it's not that complicated, but it still requires effort, so much so that some people don't even care to bother with it.Do you know what is easy though? Eating a baked cake! Yeah, that's a pretty easy thing to do because it tastes good. Thus, this phrase may possibly get its "easy to accomplish" meaning from how simple it can be to eat a piece of this delicious desert. However, that is simply a guess; the origins for this phrase are not certain. The figurative meaning of this phrase goes back to at least the 1930s. The term is used by an American poet named Ogden Nash, who wrote Primrose Path in 1936. There's a quote from it that reads:</ul>
+
+<h3>練習3</h3><ul>
+<li>コマンド
+  $ gpg -ca himitsu-3491.txt
+  パスフレーズ：alicesendbobamail
+  $ cat himitsu-3491.txt.asc
+    -----BEGIN PGP MESSAGE-----
+  Version: GnuPG v1
+
+  hQEMA5ByBaxjcwq1AQf/WeTlrjmXcmTONz9A0EbDxNaD5Kd1UWbJbFC5caXXbm8r
+  u/sWTSvj6S5AHePL6HZLqaxQBKV1kh9bo511xivo+qH1chPTdOpBcMh4x+Mmxn1Q
+  5W+/IiZRF508de6ZS5nV7WUSVOEK2pSx7h9GjTa7CVMKn3uhoKoESj8lir4g9smG
+  jJsGqJFP3bmRTOGWTVq/ScwCQjhoVBLBvEmeCVqEyABo5YratClL1KUr4Srt1yT6
+  n8mKX6abHRUdZ4zHepQoHiI0em3D9PBl0BbWVomCKgIDaTyhms5ys1ACkyOv4S5I
+  sU4U/tkx7VCbXKWCjyko7NYRwd4MGreFqP113NhIhNLAeAF/s0M2WALNz2LvShDX
+  YtoU3cL3ybA1xdpdo+klGQFSNXOW0nlkhmuxwPkJGDu+Hx17Ws0sg2tvvz0db8Bh
+  Ck4Tqi9x4ok4Zzojp6w2NpzjLUKVvpqihGJ+IUq6qDtpxVuWptCZyQooqQzruiw0
+  7gr4QLuo5fok2yvGPqrcp2cSPAXaR9apHTn7NEtiTgF/G5M5ac+rgEExU7tYaYB8
+  YOslbCeFClR/RKK1tgjYNSwXSGTBd0kmWu0SFNSOpIkShIuRgppXFala7A3FlY9S
+  90CJzkbMwise3zZ4F261OFlg8cFcdu/l+eBzNwCLax4HWuX4A+KIdK2rb00Fvc/0
+  5furmugYvJAzSDGq3BIzqecs1jeJ7Iwx2QBiXHwfE8WbZpfC16p4LJmo+mUydPQS
+  Pq+G+bl45mzuGw==
+  =4yFJ
+  -----END PGP MESSAGE-----
+ $ gpg -d himitsu-3491.txt.asc
+  次のユーザの秘密鍵のロックを解除するには
+パスフレーズがいります:"Hironari Nagayoshi (I got a RSA account) "
+2048ビットRSA鍵, ID 63730AB5作成日付は2017-06-28 (主鍵ID 108F7183)
+
+gpg: 2048-ビットRSA鍵, ID 63730AB5, 日付2017-06-28に暗号化されました
+      "Hironari Nagayoshi (I got a RSA account)"
+The known-plaintext attack (KPA) is an attack model for cryptanalysis where the attacker has access to both the plaintext (called a crib), and its encrypted version (ciphertext).
+These can be used to reveal further secret information such as secret keys and code books.
+The term "crib" originated at Bletchley Park, the British World War II decryption operation.</ul>
+
 <h3>練習4</h3>
+ $ gpg --gen-key
+ご希望の鍵の種類を選択してください:
+(1) RSA and RSA (default)
+(2) DSA and Elgamal
+(3) DSA (署名のみ)
+(4) RSA (署名のみ)
+選択は? 1
+RSA keys may be between 1024 and 4096 bits long. What keysize do you want? (2048)
+要求された鍵長は 2048 ビット 鍵の有効期限を指定してください。
+鍵の有効期間は？(0) 0
+ Keyは無期限です これで正しいですか? (y/N) y
+あなたの鍵を同定するためにユーザー ID が必要です。 このソフトは本名、コメント、電子メール・アドレスから
+次の書式でユーザー ID を構成します
+"Heinrich Heine (Der Dichter)"
+本名: Hironari Nagayoshi
+電子メール・アドレス: todai.taro@example.com (自分のアドレスで置き換える) 次のユーザー ID を選択しました:
+    "Hironari Nagayoshi"
+名前 (N)、コメント (C)、電子メール (E) の変更、または OK(O) か終了 (Q)? O
+秘密鍵を保護するためにパスフレーズ
+パスフレーズを入力:alicesendbobamail
+パスフレーズを再入力:alicesendbobamail
+たくさんのランダム・バイトの生成が必要です。キーボードを打つ、マウスを動か す、ディスクにアクセスするなどの他の操作を素数生成の間に行うことで、乱数生
+成器に十分なエントロピーを供給する機会を与えることができます。
+エントロピー=乱雑さ、情報量。エントロピー
+が大きい=場合の数が多い=発見されにくい
+ ..+++++
+.+++++ たくさんのランダム・バイトの生成が必要です。キーボードを打つ、マウスを動か
+す、ディスクにアクセスするなどの他の操作を素数生成の間に行うことで、乱数生
+成器に十分なエントロピーを供給する機会を与えることができます。
+..+++++
+.+++++
+gpg: 鍵BDF210A8を究極的に信用するよう記録しました
+公開鍵と秘密鍵を作成し、署名しました。
+
 <h3>練習5</h3>
+$ gpg -r nano@g.ecc.u-toky.ac.jp -ea himitsu-3491txt
+$ cat himitsu-3491.txt.asc
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+hQEMA5ByBaxjcwq1AQf/WeTlrjmXcmTONz9A0EbDxNaD5Kd1UWbJbFC5caXXbm8r
+u/sWTSvj6S5AHePL6HZLqaxQBKV1kh9bo511xivo+qH1chPTdOpBcMh4x+Mmxn1Q
+5W+/IiZRF508de6ZS5nV7WUSVOEK2pSx7h9GjTa7CVMKn3uhoKoESj8lir4g9smG
+jJsGqJFP3bmRTOGWTVq/ScwCQjhoVBLBvEmeCVqEyABo5YratClL1KUr4Srt1yT6
+n8mKX6abHRUdZ4zHepQoHiI0em3D9PBl0BbWVomCKgIDaTyhms5ys1ACkyOv4S5I
+sU4U/tkx7VCbXKWCjyko7NYRwd4MGreFqP113NhIhNLAeAF/s0M2WALNz2LvShDX
+YtoU3cL3ybA1xdpdo+klGQFSNXOW0nlkhmuxwPkJGDu+Hx17Ws0sg2tvvz0db8Bh
+Ck4Tqi9x4ok4Zzojp6w2NpzjLUKVvpqihGJ+IUq6qDtpxVuWptCZyQooqQzruiw0
+7gr4QLuo5fok2yvGPqrcp2cSPAXaR9apHTn7NEtiTgF/G5M5ac+rgEExU7tYaYB8
+YOslbCeFClR/RKK1tgjYNSwXSGTBd0kmWu0SFNSOpIkShIuRgppXFala7A3FlY9S
+90CJzkbMwise3zZ4F261OFlg8cFcdu/l+eBzNwCLax4HWuX4A+KIdK2rb00Fvc/0
+5furmugYvJAzSDGq3BIzqecs1jeJ7Iwx2QBiXHwfE8WbZpfC16p4LJmo+mUydPQS
+Pq+G+bl45mzuGw==
+=4yFJ
+-----END PGP MESSAGE-----
+
+$ gpg -d himitsu-3491.txt.asc
+次のユーザの秘密鍵のロックを解除するには
+パスフレーズがいります:"Hironari Nagayoshi (I got a RSA account) "
+2048ビットRSA鍵, ID 63730AB5作成日付は2017-06-28 (主鍵ID 108F7183)
+
+gpg: 2048-ビットRSA鍵, ID 63730AB5, 日付2017-06-28に暗号化されました
+    "Hironari Nagayoshi (I got a RSA account)"
+The known-plaintext attack (KPA) is an attack model for cryptanalysis where the attacker has access to both the plaintext (called a crib), and its encrypted version (ciphertext).
+These can be used to reveal further secret information such as secret keys and code books.
+The term "crib" originated at Bletchley Park, the British World War II decryption operation.
+
+$ gpg --clearsign honmono-3491.txt
+$ cat honmono-3491.txt.asc
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+時給5000兆円のアルバイト！！！！！
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZUz7kAAoJEOy3rWcQj3GDwHkIAKPMtVOjA6gXzi3zxX5018/B
+S38dcyL+1u33VsJean+rezQptL4QIB6j+p8KNJHvRVgy1tiEFnCbQ5xrXIEIJFDZ
+ra3NY009q0QOJ5+znWsWQyzXJuh3ak+lb4/IwDUOCjmkiFZ68cK6JV635OKOWkMs
+Gkdx2Gh/U5+1VxFcSiwjAt0kMDtUG5o2Laqg4Jj5R8If6rZuo18BCE7FoZ+q++hR
+KfjrDM5lKZxx3RtrxlFcey34DdPxq88//Fg+znVVmIHwsEXvHWFggn7O38sTcS5R
+lu1HVgPR1mCqiLpFKrxe97H3lIwOmL2pr3YWguGbryx20vdpOAfEnWetULVcu54=
+=jg3R
+-----END PGP SIGNATURE-----
+
+gpg: 水  6/28 14:30:12 2017 JSTにRSA鍵ID 108F7183で施された署名
+gpg: "Hironari Nagayoshi (I got a RSA account)"からの 正しい 署名
+
+
+この後、署名を友人に送付し、検証してもらった。
+
 <h3>練習6</h3>
+$ cat honmono-3491.txt.asc
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+時給5000円のアルバイト！！！！！
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQEcBAEBAgAGBQJZUz7kAAoJEOy3rWcQj3GDwHkIAKPMtVOjA6gXzi3zxX5018/B
+S38dcyL+1u33VsJean+rezQptL4QIB6j+p8KNJHvRVgy1tiEFnCbQ5xrXIEIJFDZ
+ra3NY009q0QOJ5+znWsWQyzXJuh3ak+lb4/IwDUOCjmkiFZ68cK6JV635OKOWkMs
+Gkdx2Gh/U5+1VxFcSiwjAt0kMDtUG5o2Laqg4Jj5R8If6rZuo18BCE7FoZ+q++hR
+KfjrDM5lKZxx3RtrxlFcey34DdPxq88//Fg+znVVmIHwsEXvHWFggn7O38sTcS5R
+lu1HVgPR1mCqiLpFKrxe97H3lIwOmL2pr3YWguGbryx20vdpOAfEnWetULVcu54=
+=jg3R
+-----END PGP SIGNATURE-----
+
+$ gpg --verify honmono-3491.txt.asc
+gpg: 水  6/28 14:30:12 2017 JSTにRSA鍵ID 108F7183で施された署名
+gpg: "Hironari Nagayoshi (I got a RSA account)"からの 不正な 署名
+
 <h3>練習7</h3>
+友人と公開鍵暗号を用いて検証しつつ復元した言葉は以下。
+
+your security
 <h3>練習8</h3>
+全員の公開鍵を登録し他結果、電子署名は以下の通り。
+
+pc111115m:liar 7989303491$ gpg --verify ichiro.txt.asc
+gpg: 火  6/27 12:24:53 2017 JSTにRSA鍵ID 99F69829で施された署名
+gpg: "Saburo Todai"からの正しい署名
+gpg: WARNING: not a detached signature; file 'ichiro.txt' was NOT verified!
+
+pc111115m:liar 7989303491$ gpg --verify ichiroL.txt.asc
+gpg: 火  6/27 12:25:39 2017 JSTにRSA鍵ID 42DD0147で施された署名
+gpg: "Jiro Todai"からの正しい署名
+gpg: WARNING: not a detached signature; file 'ichiroL.txt' was NOT verified!
+
+pc111115m:liar 7989303491$ gpg --verify saburoL.txt.asc
+gpg: 火  6/27 12:27:40 2017 JSTにRSA鍵ID DABE451Dで施された署名
+gpg: "Ichiro Todai"からの正しい署名
+gpg: WARNING: not a detached signature; file 'saburoL.txt' was NOT verified!
+
+pc111115m:liar 7989303491$ gpg --verify jiroL.txt.asc
+gpg: 火  6/27 12:27:15 2017 JSTにRSA鍵ID 99F69829で施された署名
+gpg: "Saburo Todai"からの正しい署名
+gpg: WARNING: not a detached signature; file 'jiroL.txt' was NOT verified!
+
+よって、正直者は「一郎のみ」もしくは「二郎のみ」。
+
 <h3>練習9</h3>
+
+信用できる公開鍵によって認証された文字を並べると「secret」となる。
+
 <h3>練習10</h3>
+
+総当たり的に、それぞれの名前にから電子指紋を作成したが、その中にこの電子指紋に適合するものはなかった。
 
 </pre>
 
